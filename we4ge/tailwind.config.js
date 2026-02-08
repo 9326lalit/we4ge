@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: ["class"],
   content: [
     "./index.html",
     "./src/**/*.{js,jsx,ts,tsx}",
@@ -8,24 +9,27 @@ export default {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "rgb(var(--color-primary) / <alpha-value>)",
-          foreground: "rgb(var(--color-primary-foreground) / <alpha-value>)",
+          DEFAULT: "#7C3AED",
+          foreground: "#FFFFFF",
         },
         accent: {
-          DEFAULT: "rgb(var(--color-accent) / <alpha-value>)",
+          DEFAULT: "#0EA5E9",
+          foreground: "#FFFFFF",
         },
-        background: "rgb(var(--color-background) / <alpha-value>)",
-        foreground: "rgb(var(--color-foreground) / <alpha-value>)",
+        background: "#FFFFFF",
+        foreground: "#0F172A",
         secondary: {
-          DEFAULT: "rgb(var(--color-secondary) / <alpha-value>)",
+          DEFAULT: "#F8FAFC",
+          foreground: "#0F172A",
         },
         card: {
-          DEFAULT: "rgb(var(--color-card) / <alpha-value>)",
+          DEFAULT: "#FFFFFF",
+          foreground: "#0F172A",
         },
-        border: "rgb(var(--color-border) / <alpha-value>)",
+        border: "#E2E8F0",
         muted: {
-          DEFAULT: "rgb(var(--color-muted) / <alpha-value>)",
-          foreground: "rgb(var(--color-muted-foreground) / <alpha-value>)",
+          DEFAULT: "#F1F5F9",
+          foreground: "#64748B",
         },
       },
     },
