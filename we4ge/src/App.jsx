@@ -122,9 +122,14 @@ const Navbar = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <a href="#home" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-              <Zap className="w-4 h-4 text-white" />
-            </div>
+           <div className="w-8 h-8 rounded-lg overflow-hidden flex items-center justify-center bg-white">
+  <img 
+    src="/we4ge_2nd.png" 
+    alt="Logo"
+    className="w-full h-full object-contain"
+  />
+</div>
+
             <span className="text-lg font-semibold">we4ge</span>
           </a>
 
@@ -622,9 +627,14 @@ const Footer = () => (
       <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8 mb-8">
         <div className="sm:col-span-2">
           <div className="flex items-center gap-2 mb-3">
-            <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-              <Zap className="w-4 h-4 text-white" />
-            </div>
+            <div className="w-8 h-8 rounded-lg overflow-hidden flex items-center justify-center bg-white">
+  <img 
+    src="/we4ge_2nd.png" 
+    alt="Logo"
+    className="w-full h-full object-contain"
+  />
+</div>
+
             <span className="text-lg font-semibold">we4ge</span>
           </div>
           <p className="text-sm text-muted-foreground max-w-xs mb-4">
