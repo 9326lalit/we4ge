@@ -192,49 +192,67 @@ const Navbar = () => {
 };
 
 const HeroSection = () => (
-  <section id="home" className="pt-24 pb-16 md:pt-32 md:pb-24 px-4 sm:px-6 lg:px-8">
-    <div className="max-w-6xl mx-auto">
-      <div className="grid md:grid-cols-2 gap-12 items-center">
-        <div className="space-y-6">
-          <Badge variant="secondary" className="text-xs">
-            <Sparkles className="w-3 h-3 mr-1" />
+  <section 
+    id="home" 
+    className="relative min-h-screen flex items-center pt-20 px-4 sm:px-6 lg:px-8 bg-background"
+  >
+    {/* Subtle background glow */}
+    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-background to-purple-500/5" />
+    <div className="absolute top-1/4 -right-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
+    <div className="absolute bottom-1/4 -left-20 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
+
+    <div className="max-w-7xl mx-auto relative z-10 w-full">
+      <div className="grid md:grid-cols-2 gap-16 items-center">
+        
+        {/* LEFT CONTENT */}
+        <div className="space-y-6 text-left">
+          <Badge 
+            variant="secondary" 
+            className="inline-flex items-center gap-1 px-4 py-1.5 rounded-full"
+          >
+            <Sparkles className="w-3 h-3 text-blue-500" />
             Trusted by 100+ companies
           </Badge>
-          
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
+
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight tracking-tight">
             Build digital products that{" "}
-            <span className="text-blue-600">matter</span>
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              stand out
+            </span>
           </h1>
-          
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            We craft exceptional digital experiences through innovative design and 
-            cutting-edge technology. Let's bring your vision to life.
+
+          <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
+            We design and build modern, high-performance digital experiences using 
+            cutting-edge technology, clean design, and scalable architecture.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-3">
-            <Button className="text-sm h-11">
+          <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            <Button size="lg" className="h-12 px-6">
               Start Your Project
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
-            <Button variant="outline" className="text-sm h-11">
+
+            <Button variant="outline" size="lg" className="h-12 px-6">
               View Our Work
             </Button>
           </div>
 
-          <div className="flex items-center gap-6 pt-2">
+          {/* Social Proof */}
+          <div className="flex items-center gap-6 pt-6">
             <div className="flex -space-x-2">
-              {['A', 'B', 'C', 'D'].map((letter, i) => (
-                <Avatar key={i} className="w-8 h-8 border-2 border-background">
-                  <AvatarFallback className="bg-gradient-to-br from-blue-500 to-purple-500 text-white text-xs">
+              {["A", "B", "C", "D"].map((letter, i) => (
+                <Avatar key={i} className="w-9 h-9 border-2 border-background">
+                  <AvatarFallback className="bg-gradient-to-br from-blue-500 to-purple-500 text-white text-xs font-medium">
                     {letter}
                   </AvatarFallback>
                 </Avatar>
               ))}
             </div>
+
             <div className="text-sm">
               <div className="flex gap-0.5">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-3 h-3 fill-yellow-500 text-yellow-500" />
+                  <Star key={i} className="w-4 h-4 fill-yellow-500 text-yellow-500" />
                 ))}
               </div>
               <p className="text-xs text-muted-foreground">From 500+ reviews</p>
@@ -242,39 +260,47 @@ const HeroSection = () => (
           </div>
         </div>
 
-        <Card className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-950/20 dark:to-purple-950/20 border-0">
+        {/* RIGHT SIDE — Clean Dashboard Card */}
+        <Card className="bg-gradient-to-br from-blue-50/60 to-purple-50/60 dark:from-blue-950/20 dark:to-purple-950/20 border border-border/40 backdrop-blur-sm shadow-lg rounded-2xl">
           <CardContent className="p-6">
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <h3 className="text-sm font-semibold">Project Dashboard</h3>
-                <Badge variant="secondary" className="text-xs">Live</Badge>
+                <Badge variant="secondary" className="text-xs">
+                  Live
+                </Badge>
               </div>
-              
+
               <div className="grid grid-cols-2 gap-3">
-                <div className="bg-background/60 backdrop-blur-sm rounded-lg p-4">
+                <div className="bg-background/60 backdrop-blur-sm rounded-lg p-4 border border-border/40">
                   <TrendingUp className="w-5 h-5 text-blue-600 mb-2" />
                   <div className="text-2xl font-bold">150+</div>
                   <div className="text-xs text-muted-foreground">Projects</div>
                 </div>
-                <div className="bg-background/60 backdrop-blur-sm rounded-lg p-4">
+
+                <div className="bg-background/60 backdrop-blur-sm rounded-lg p-4 border border-border/40">
                   <Award className="w-5 h-5 text-purple-600 mb-2" />
                   <div className="text-2xl font-bold">98%</div>
                   <div className="text-xs text-muted-foreground">Satisfaction</div>
                 </div>
               </div>
 
-              <div className="bg-background/60 backdrop-blur-sm rounded-lg p-4">
+              <div className="bg-background/60 backdrop-blur-sm rounded-lg p-4 border border-border/40">
                 <div className="flex justify-between items-center mb-2">
                   <span className="text-xs font-medium">Performance</span>
                   <span className="text-sm font-bold">95%</span>
                 </div>
                 <div className="w-full bg-secondary/50 rounded-full h-2">
-                  <div className="bg-gradient-to-r from-blue-600 to-purple-600 h-2 rounded-full" style={{width: '95%'}}></div>
+                  <div
+                    className="bg-gradient-to-r from-blue-600 to-purple-600 h-2 rounded-full"
+                    style={{ width: "95%" }}
+                  ></div>
                 </div>
               </div>
             </div>
           </CardContent>
         </Card>
+
       </div>
     </div>
   </section>
