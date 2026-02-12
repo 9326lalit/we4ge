@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import { 
-  Menu, X, ChevronRight, ArrowRight, Check, Star, 
-  Rocket, Target, TrendingUp, Award, Users, Globe,
+  Menu, X,  ArrowRight,  Star, 
+  Rocket,  TrendingUp, Award, Users, Globe,
   Smartphone, Layout, Database, Lock, Zap, BarChart,
-  MessageSquare, Mail, MapPin, Phone, Linkedin, 
-  Twitter, Instagram, Github, CheckCircle2, Play,
-  ArrowUpRight, Sparkles
+  Mail, MapPin, Phone, CheckCircle2
+  , Sparkles,
+  ExternalLink,
+  Linkedin, Twitter, Instagram, Github
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -17,8 +18,9 @@ import { Textarea } from "@/components/ui/textarea";
 const navLinks = [
   { href: "#home", label: "Home" },
   { href: "#services", label: "Services" },
-  { href: "#work", label: "Our Work" },
+  // { href: "#work", label: "Our Work" },
   { href: "#about", label: "About" },
+  { href: "#portfolio", label: "Portfolio" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -78,6 +80,43 @@ const projects = [
     color: "from-purple-500 to-pink-500"
   },
 ];
+
+const projectss = [
+  {
+    id: 1,
+    title: "E-Commerce Platform",
+    description:
+      "A full-featured e-commerce web application with product management, cart functionality, authentication, and secure checkout integration.",
+    image:
+      "https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=1470&auto=format&fit=crop",
+    tech: ["React", "Tailwind", "Node.js", "MongoDB"],
+    live: "#",
+    github: "#",
+  },
+  {
+    id: 2,
+    title: "Admin Dashboard",
+    description:
+      "Modern admin dashboard with analytics, charts, user management, and responsive layout using reusable components.",
+    image:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1470&auto=format&fit=crop",
+    tech: ["React", "Chart.js", "Tailwind"],
+    live: "#",
+    github: "#",
+  },
+  {
+    id: 3,
+    title: "SaaS Landing Page",
+    description:
+      "High-converting SaaS landing page with smooth animations, pricing sections, testimonials, and modern UI/UX design.",
+    image:
+      "https://images.unsplash.com/photo-1492724441997-5dc865305da7?q=80&w=1470&auto=format&fit=crop",
+    tech: ["React", "Tailwind", "Framer Motion"],
+    live: "#",
+    github: "#",
+  },
+];
+
 
 const testimonials = [
   {
@@ -360,49 +399,49 @@ const ServicesSection = () => (
   </section>
 );
 
-const WorkSection = () => (
-  <section id="work" className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-secondary/30">
-    <div className="max-w-6xl mx-auto">
-      <div className="text-center max-w-2xl mx-auto mb-12">
-        <Badge variant="secondary" className="mb-3 text-xs">Portfolio</Badge>
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
-          Featured projects
-        </h2>
-        <p className="text-muted-foreground">
-          Real-world solutions that deliver measurable results
-        </p>
-      </div>
+// const WorkSection = () => (
+//   <section id="work" className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 ">
+//     <div className="max-w-6xl mx-auto">
+//       <div className="text-center max-w-2xl mx-auto mb-12">
+//         <Badge variant="secondary" className="mb-3 text-xs">Portfolio</Badge>
+//         <h2 className="text-3xl md:text-4xl font-bold mb-4">
+//           Featured projects
+//         </h2>
+//         <p className="text-muted-foreground">
+//           Real-world solutions that deliver measurable results
+//         </p>
+//       </div>
 
-      <div className="grid md:grid-cols-3 gap-6">
-        {projects.map((project, i) => (
-          <Card key={i} className="group overflow-hidden hover:shadow-lg transition-shadow">
-            <div className={`h-40 bg-gradient-to-br ${project.color} relative`}>
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
-              <div className="absolute top-4 left-4">
-                <Badge className="bg-white/90 text-gray-900 text-xs">
-                  {project.category}
-                </Badge>
-              </div>
-            </div>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
-              <p className="text-sm text-muted-foreground mb-4">
-                {project.description}
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {project.metrics.map((metric, j) => (
-                  <Badge key={j} variant="secondary" className="text-xs">
-                    {metric}
-                  </Badge>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
-    </div>
-  </section>
-);
+//       <div className="grid md:grid-cols-3 gap-6">
+//         {projects.map((project, i) => (
+//           <Card key={i} className="group overflow-hidden hover:shadow-lg transition-shadow">
+//             <div className={`h-40 bg-gradient-to-br ${project.color} relative`}>
+//               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+//               <div className="absolute top-4 left-4">
+//                 <Badge className="bg-white/90 text-gray-900 text-xs">
+//                   {project.category}
+//                 </Badge>
+//               </div>
+//             </div>
+//             <CardContent className="p-6">
+//               <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
+//               <p className="text-sm text-muted-foreground mb-4">
+//                 {project.description}
+//               </p>
+//               <div className="flex flex-wrap gap-2">
+//                 {project.metrics.map((metric, j) => (
+//                   <Badge key={j} variant="secondary" className="text-xs">
+//                     {metric}
+//                   </Badge>
+//                 ))}
+//               </div>
+//             </CardContent>
+//           </Card>
+//         ))}
+//       </div>
+//     </div>
+//   </section>
+// );
 
 const AboutSection = () => (
   <section id="about" className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
@@ -608,7 +647,7 @@ const ContactSection = () => {
             </Card>
 
             <div className="flex gap-3">
-              {[Linkedin, Twitter, Github, Instagram].map((Icon, i) => (
+              {[Linkedin, Twitter, Instagram].map((Icon, i) => (
                 <a
                   key={i}
                   href="#"
@@ -719,6 +758,88 @@ const Footer = () => (
   </footer>
 );
 
+const PortfolioSection = () => (
+  <section
+        id="portfolio"
+        className=" py-20 px-6 lg:px-20"
+      >
+        <div className="max-w-7xl mx-auto">
+          {/* Section Title */}
+          <div className="text-center mb-16">
+            <h2 className="text-4xl text-black md:text-5xl font-bold mb-4">
+              Featured <span className="text-indigo-500">Projects</span>
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+              A selection of my recent work showcasing full-stack development,
+              modern UI design, and scalable architecture.
+            </p>
+          </div>
+  
+          {/* Project Grid */}
+          <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+            {projectss.map((project) => (
+              <div
+                key={project.id}
+                className="group  rounded-2xl overflow-hidden shadow-lg hover:shadow-indigo-500/20 transition-all duration-500 border border-gray-800 hover:-translate-y-2"
+              >
+                {/* Image */}
+                <div className="relative overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-56 object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/40 opacity-0  flex items-center justify-center gap-4">
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-indigo-600 p-3 rounded-full "
+                      aria-label="Live Demo"
+                    >
+                      <ExternalLink size={20} />
+                    </a>
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-gray-800 p-3 rounded-full "
+                      aria-label="GitHub Repository"
+                    >
+                      <Github size={20} />
+                    </a>
+                  </div>
+                </div>
+  
+                {/* Content */}
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold mb-3">
+                    {project.title}
+                  </h3>
+  
+                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+                    {project.description}
+                  </p>
+  
+                  {/* Tech Stack */}
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map((tech, index) => (
+                      <span
+                        key={index}
+                        className="text-xs bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full border border-indigo-500/20"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+);
+
 const App = () => {
   return (
     <div className="min-h-screen bg-background">
@@ -726,7 +847,8 @@ const App = () => {
       <HeroSection />
       <StatsSection />
       <ServicesSection />
-      <WorkSection />
+      {/* <WorkSection /> */}
+      <PortfolioSection />  
       <AboutSection />
       <TestimonialsSection />
       <CTASection />
