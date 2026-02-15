@@ -15,7 +15,7 @@ const Footer = () => {
               Ready to implement <br /> AI in your business?
             </h2>
 
-            <button className="inline-flex items-center gap-3 bg-lime-400 text-black px-7 py-4 rounded-sm font-semibold text-sm hover:opacity-90 transition-all duration-300">
+            <button className="inline-flex items-center gap-3 bg-lime-400 text-black px-3 py-3 rounded-sm font-semibold text-sm hover:opacity-90 transition-all duration-300">
               Get Free Consultation
               <span className="bg-black text-white p-2 rounded-md">
                 <ArrowUpRight size={16} />
