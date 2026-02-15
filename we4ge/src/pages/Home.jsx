@@ -50,10 +50,10 @@ const Home = () => {
               </p>
 
               <div className="flex flex-wrap items-center gap-10 opacity-70">
-                <img src="/public/Bameetech.png" alt="logo" className="h-6" />
-                <img src="/public/infinite_uptime.jpg" alt="logo" className="h-6" />
-                <img src="/public/tp_logo.webp" alt="logo" className="h-6" />
-                <img src="/public/intangles_logo.jpg" alt="logo" className="h-6" />
+                <img src="/Bameetech.png" alt="logo" className="h-6" />
+                <img src="/infinite_uptime.jpg" alt="logo" className="h-6" />
+                <img src="/tp_logo.webp" alt="logo" className="h-6" />
+                <img src="/intangles_logo.jpg" alt="logo" className="h-6" />
               </div>
             </div>
 
