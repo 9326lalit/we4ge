@@ -44,7 +44,7 @@ const Plan = () => {
   ];
 
   return (
-    <section id="plan" className="w-full bg-white py-24">
+    <section id="plan" className="w-full bg-white py-10">
       <div className="max-w-7xl mx-auto px-3 lg:px-12">
 
         {/* Header */}
@@ -88,7 +88,7 @@ const Plan = () => {
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`relative p-8 rounded-lg border transition hover:shadow-lg ${
+              className={`relative p-4 rounded-lg border transition hover:shadow-lg ${
                 plan.popular
                   ? "border-gray-900 shadow-md"
                   : "border-gray-200"

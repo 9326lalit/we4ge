@@ -44,7 +44,9 @@ const Navbar = () => {
           {/* RIGHT: CTA Button */}
           <div className="hidden lg:flex">
             <button className="border border-gray-900 text-gray-900 px-5 py-2 text-sm font-medium hover:bg-gray-900 hover:text-white transition">
+               <a href="#contact" className="hover:text-gray-100 transition">
               Work with us
+            </a>
             </button>
           </div>
 

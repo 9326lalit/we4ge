@@ -37,7 +37,7 @@ const Faq = () => {
   };
 
   return (
-    <section className="w-full bg-[#f5f5f5] py-24">
+    <section className="w-full bg-[#f5f5f5] py-10">
       <div className="max-w-7xl mx-auto px-3 lg:px-12">
 
         <div className="grid lg:grid-cols-2 gap-16">

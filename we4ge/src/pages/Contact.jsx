@@ -2,7 +2,7 @@ import React from "react";
 
 const Contact = () => {
   return (
-    <section className="w-full bg-white py-24">
+    <section className="w-full bg-white py-10">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
 
         {/* Header */}
@@ -34,7 +34,8 @@ const Contact = () => {
                 reach out directly.
               </p>
               <p className="mt-4 text-gray-900 font-medium">
-                lalit.khairnar.dev@gmail.com
+                lalit.khairnar.dev@gmail.com<br/>
+                +91 9325443405
               </p>
             </div>
 
@@ -43,9 +44,7 @@ const Contact = () => {
                 Office
               </h3>
               <p className="text-gray-600">
-                123 Business Avenue <br />
-                Suite 400 <br />
-                New York, NY 10001
+                Pune <br />
               </p>
             </div>
 
@@ -54,7 +53,7 @@ const Contact = () => {
                 Working Hours
               </h3>
               <p className="text-gray-600">
-                Monday – Friday <br />
+                Monday – Saturday <br />
                 9:00 AM – 6:00 PM
               </p>
             </div>
@@ -62,7 +61,7 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-gray-50 border border-gray-200 rounded-lg p-10">
+          <div className="bg-gray-50 border border-gray-200 rounded-lg p-3">
             <form className="space-y-6">
 
               <div>

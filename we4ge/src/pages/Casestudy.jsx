@@ -2,8 +2,8 @@ import { ArrowUpRight } from "lucide-react";
 
 const CaseStudy = () => {
   return (
-    <section id="casestudy" className="w-full bg-white py-28">
-      <div className="max-w-7xl mx-auto px-3 lg:px-12">
+    <section id="casestudy" className="w-full bg-white py-10">
+      <div className="max-w-7xl mx-auto px-4 lg:px-12">
 
         {/* SECTION HEADER */}
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-20">

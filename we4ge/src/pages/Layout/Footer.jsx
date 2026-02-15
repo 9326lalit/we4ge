@@ -11,7 +11,7 @@ const Footer = () => {
 
           {/* LEFT */}
           <div>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight mb-10">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-[1.1] tracking-tight mb-10">
               Ready to implement <br /> AI in your business?
             </h2>
 
@@ -65,7 +65,7 @@ const Footer = () => {
               Navigation
             </p>
             <ul className="space-y-4 text-white/70 text-sm">
-              {["Home", "Services", "Case Studies", "Blog", "Waitlist", "404"].map((item) => (
+              {["Home", "Services", "Case Studies"].map((item) => (
                 <li key={item} className="hover:text-white transition duration-200 cursor-pointer">
                   {item}
                 </li>
@@ -86,16 +86,7 @@ const Footer = () => {
               ))}
             </ul>
 
-            <p className="text-xs uppercase tracking-widest text-white/40 mb-6">
-              Legal
-            </p>
-            <ul className="space-y-4 text-white/70 text-sm">
-              {["Terms of Services", "Privacy Policy"].map((item) => (
-                <li key={item} className="hover:text-white transition duration-200 cursor-pointer">
-                  {item}
-                </li>
-              ))}
-            </ul>
+           
           </div>
 
           {/* SOCIAL */}
@@ -104,7 +95,7 @@ const Footer = () => {
               Follow Us
             </p>
             <ul className="space-y-4 text-white/70 text-sm">
-              {["X / Twitter", "Instagram", "Behance", "Telegram", "LinkedIn"].map((item) => (
+              {[ "Instagram","LinkedIn" ,"Upwork"].map((item) => (
                 <li key={item} className="hover:text-white transition duration-200 cursor-pointer">
                   {item}
                 </li>
@@ -118,14 +109,15 @@ const Footer = () => {
       {/* Bottom Bar */}
       <div className="max-w-7xl mx-auto px-3 lg:px-12 pb-14 flex flex-col lg:flex-row justify-between items-center text-white/40 text-xs tracking-wide">
         <p>©2026 we4ge. All rights reserved.</p>
-        <p className="mt-4 lg:mt-0">Made by we4ge</p>
       </div>
 
-      {/* ================= LARGE BACKGROUND WATERMARK ================= */}
-      <div className="absolute bottom-[-40px] left-0 w-full text-center pointer-events-none select-none">
+      <div className="mb-10">
+        {/* ================= LARGE BACKGROUND WATERMARK ================= */}
+      <div className="absolute bottom-[-40px] left-0 w-full text-center pointer-events-none select-none ">
         <h1 className="text-[120px] sm:text-[200px] lg:text-[300px] font-extrabold tracking-tight text-white/5 leading-none">
           we4ge
         </h1>
+      </div>
       </div>
 
     </footer>

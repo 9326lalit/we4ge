@@ -1,48 +1,50 @@
-import React from "react";
-import {
-  Cpu,
-  PenTool,
-  Bot,
-  Settings,
-  RefreshCw,
+import { 
+  Globe, 
+  Code2, 
+  Smartphone, 
+  Cpu, 
+  Bot, 
+  Settings, 
+  Database, 
+  Cloud 
 } from "lucide-react";
 
 const services = [
   {
-    title: "AI strategy & consulting",
+    title: "Web Development",
     description:
-      "Get a clear roadmap on how AI can drive growth and efficiency for your business.",
+      "We build fast, secure, and scalable websites and web applications tailored to your business goals.",
+    icon: Globe,
+  },
+  {
+    title: "Custom Software Development",
+    description:
+      "End-to-end software solutions designed specifically for your workflows, operations, and growth strategy.",
+    icon: Code2,
+  },
+  {
+    title: "Mobile App Development",
+    description:
+      "Cross-platform and native mobile applications built for performance, usability, and scalability.",
+    icon: Smartphone,
+  },
+  {
+    title: "AI Strategy & Automation",
+    description:
+      "Integrate intelligent automation and AI systems to optimize operations and improve decision-making.",
     icon: Cpu,
   },
   {
-    title: "AI content creation",
+    title: "AI Agent & Chatbot Development",
     description:
-      "Create high-quality AI-powered content that engages your audience and scales your brand.",
-    icon: PenTool,
-  },
-  {
-    title: "AI agent development",
-    description:
-      "Design and deploy AI agents built specifically to solve your unique business challenges.",
+      "Design and deploy smart AI agents and conversational bots to enhance customer engagement.",
     icon: Bot,
   },
   {
-    title: "CRM AI automation",
+    title: "CRM & Business System Development",
     description:
-      "Automate customer interactions and follow-ups to keep relationships strong and organized.",
-    icon: Settings,
-  },
-  {
-    title: "AI process automation",
-    description:
-      "Transform repetitive workflows into smooth, automated systems that save time.",
-    icon: RefreshCw,
-  },
-  {
-    title: "CRM AI automation",
-    description:
-      "Automate customer interactions and follow-ups to keep relationships strong and organized.",
-    icon: Settings,
+      "Custom CRM, ERP, and internal management systems to streamline your business processes.",
+    icon: Database,
   }
 ];
 
@@ -57,7 +59,7 @@ const Services = () => {
             <p className="text-sm uppercase tracking-widest text-gray-400 mb-4">
               Our Services
             </p>
-            <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight">
+            <h2 className="text-4xl sm:text-5xl font-semibold text-gray-900 leading-tight">
               Automation solutions
             </h2>
           </div>
@@ -76,7 +78,7 @@ const Services = () => {
             return (
               <div
                 key={index}
-                className="group bg-white p-8 rounded-sm border border-gray-200 hover:shadow-xl transition duration-300"
+                className="group bg-white p-4 rounded-sm border border-gray-200 hover:shadow-xl transition duration-300"
               >
                 <div className="mb-6">
                   <Icon className="w-10 h-10 text-gray-800 group-hover:text-black transition" />
