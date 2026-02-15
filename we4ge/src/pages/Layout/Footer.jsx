@@ -26,7 +26,7 @@ const Footer = () => {
           {/* RIGHT IMAGE */}
           <div className="flex justify-center lg:justify-end">
             <img
-              src="/public/we4ge_logo.png"
+              src="/we4ge_logo.png"
               alt="AI Graphic"
               className="w-72 sm:w-80 lg:w-[360px] object-contain"
             />

@@ -80,7 +80,7 @@ const CaseStudy = () => {
           {/* IMAGE */}
           <div>
             <img
-            src="/public/ai_image.jpg"
+            src="/ai_image.jpg"
               alt="Nakula Case Study"
               className="rounded-lg w-full object-cover"
             />
@@ -95,7 +95,7 @@ const CaseStudy = () => {
           {/* IMAGE (LEFT ON DESKTOP) */}
           <div className="order-1 lg:order-1">
             <img
-            src="/public/ai2.jpg"
+            src="/ai2.jpg"
               alt="Obima Case Study"
               className="rounded-lg w-full object-cover"
             />
