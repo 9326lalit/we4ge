@@ -10,7 +10,7 @@ const Navbar = () => {
           {/* LEFT: Logo */}
           <div className="flex items-center">
             <img
-              src="public/we4ge_2nd.png"   // replace with your logo
+              src="/we4ge_2nd.png"   // replace with your logo
               alt="Sadeva"
               className="h-8 object-contain"
             />
