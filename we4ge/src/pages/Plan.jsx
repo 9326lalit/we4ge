@@ -1,155 +1,145 @@
-import React, { useState } from "react";
-import { Check } from "lucide-react";
+import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
+
+const plans = [
+  {
+    name: "Starter",
+    price: "$2,500",
+    description: "Ideal for early-stage startups and growing businesses.",
+    features: [
+      "Custom Website Development",
+      "Responsive UI/UX Design",
+      "Basic SEO Optimization",
+      "Cloud Deployment",
+      "30 Days Support",
+    ],
+  },
+  {
+    name: "Growth",
+    price: "$6,500",
+    description: "Advanced automation & scalable system architecture.",
+    popular: true,
+    features: [
+      "Everything in Starter",
+      "AI Workflow Automation",
+      "Custom Backend Architecture",
+      "Performance Optimization",
+      "Analytics Dashboard",
+      "90 Days Priority Support",
+    ],
+  },
+  {
+    name: "Enterprise",
+    price: "Custom",
+    description: "Full-scale AI infrastructure & enterprise solutions.",
+    features: [
+      "Dedicated Engineering Team",
+      "Enterprise AI Integration",
+      "Microservice Architecture",
+      "High-Security Deployment",
+      "24/7 Monitoring & Support",
+      "Long-Term Technical Partnership",
+    ],
+  },
+];
 
 const Plan = () => {
-  const [billing, setBilling] = useState("monthly");
-
-  const plans = [
-    {
-      name: "Starter",
-      description: "Ideal for small businesses getting started",
-      monthly: 999,
-      yearly: 799,
-      features: [
-        "AI strategy session",
-        "Basic workflow automation",
-        "Monthly performance report",
-        "Email support",
-      ],
-    },
-    {
-      name: "Growth",
-      description: "Best for scaling businesses",
-      monthly: 2499,
-      yearly: 1999,
-      popular: true,
-      features: [
-        "Everything in Starter",
-        "Custom AI agent development",
-        "CRM automation setup",
-        "Bi-weekly optimization",
-      ],
-    },
-    {
-      name: "Enterprise",
-      description: "Advanced solutions for large teams",
-      contact: true,
-      features: [
-        "Everything in Growth",
-        "Full process automation",
-        "Dedicated AI consultant",
-        "Advanced analytics dashboard",
-      ],
-    },
-  ];
-
   return (
-    <section id="plan" className="w-full bg-white py-10">
-      <div className="max-w-7xl mx-auto px-3 lg:px-12">
+    <section className="relative py-32 bg-[#0B0F19] overflow-hidden">
 
-        {/* Header */}
-        <div className="text-center mb-16">
+      {/* Background Glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-purple-600/20 blur-[160px] -z-10" />
+
+      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+
+        {/* SECTION INTRO */}
+        <div className="text-center max-w-3xl mx-auto mb-24">
           <p className="text-sm uppercase tracking-widest text-gray-500 mb-4">
-            Pricing
+            Pricing Plans
           </p>
-          <h2 className="text-4xl sm:text-5xl font-semibold text-gray-900">
-            Choose the Right Plan
+
+          <h2 className="text-5xl md:text-6xl font-semibold text-white leading-tight mb-6">
+            Flexible Solutions.
+            <br />
+            <span className="bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
+              Built for Scale.
+            </span>
           </h2>
+
+          <p className="text-gray-400 text-lg leading-relaxed">
+            Transparent pricing designed to match your business growth stage.
+            From startup foundations to enterprise AI infrastructure.
+          </p>
         </div>
 
-        {/* Billing Toggle */}
-        <div className="flex justify-center mb-14">
-          <div className="flex border border-gray-300 rounded-md overflow-hidden">
-            <button
-              onClick={() => setBilling("monthly")}
-              className={`px-3 py-2 text-sm font-medium transition ${
-                billing === "monthly"
-                  ? "bg-gray-900 text-white"
-                  : "bg-white text-gray-600 hover:bg-gray-100"
-              }`}
-            >
-              Monthly
-            </button>
-            <button
-              onClick={() => setBilling("yearly")}
-              className={`px-3 py-2 text-sm font-medium transition ${
-                billing === "yearly"
-                  ? "bg-gray-900 text-white"
-                  : "bg-white text-gray-600 hover:bg-gray-100"
-              }`}
-            >
-              Yearly (Save 20%)
-            </button>
-          </div>
-        </div>
+        {/* PRICING CARDS */}
+        <div className="grid md:grid-cols-3 gap-10">
 
-        {/* Plans */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {plans.map((plan, index) => (
-            <div
+            <motion.div
               key={index}
-              className={`relative p-4 rounded-lg border transition hover:shadow-lg ${
+              whileHover={{ y: -8 }}
+              transition={{ duration: 0.3 }}
+              className={`relative rounded-3xl border ${
                 plan.popular
-                  ? "border-gray-900 shadow-md"
-                  : "border-gray-200"
-              }`}
+                  ? "border-purple-500 bg-white/10 scale-105"
+                  : "border-white/10 bg-white/5"
+              } backdrop-blur-xl p-10 flex flex-col justify-between`}
             >
+
+              {/* Popular Badge */}
               {plan.popular && (
-                <span className="absolute top-4 right-4 text-xs font-medium bg-gray-900 text-white px-3 py-1 rounded-full">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-purple-500 to-blue-500 text-white text-xs px-4 py-1 rounded-full">
                   Most Popular
-                </span>
+                </div>
               )}
 
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                {plan.name}
-              </h3>
+              <div>
 
-              <p className="text-gray-600 mb-6">
-                {plan.description}
-              </p>
+                <h3 className="text-2xl font-semibold text-white mb-2">
+                  {plan.name}
+                </h3>
 
-              <div className="mb-6">
-                {plan.contact ? (
-                  <span className="text-3xl font-semibold text-gray-900">
-                    Contact Us
-                  </span>
-                ) : (
-                  <>
-                    <span className="text-4xl font-semibold text-gray-900">
-                      ${billing === "monthly" ? plan.monthly : plan.yearly}
-                    </span>
-                    <span className="text-gray-500 text-sm">
-                      {" "}
-                      /{billing}
-                    </span>
-                  </>
-                )}
+                <p className="text-gray-400 text-sm mb-6">
+                  {plan.description}
+                </p>
+
+                <p className="text-4xl font-semibold text-white mb-8">
+                  {plan.price}
+                </p>
+
+                <ul className="space-y-4 text-sm text-gray-300">
+                  {plan.features.map((feature, i) => (
+                    <li key={i} className="flex items-start gap-2">
+                      <span className="text-purple-400 mt-1">✔</span>
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
               </div>
 
-              <ul className="space-y-4 mb-8">
-                {plan.features.map((feature, i) => (
-                  <li
-                    key={i}
-                    className="flex items-start gap-3 text-gray-700"
-                  >
-                    <Check size={18} className="mt-1 text-gray-600" />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-
               <button
-                className={`w-full py-3 rounded-md font-medium transition ${
+                className={`mt-10 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-medium transition ${
                   plan.popular
-                    ? "bg-gray-900 text-white hover:bg-black"
-                    : "bg-gray-100 text-gray-900 hover:bg-gray-200"
+                    ? "bg-white text-black hover:scale-105"
+                    : "border border-white/20 text-white hover:bg-white hover:text-black"
                 }`}
               >
-                {plan.contact ? "Request Quote" : `Choose ${plan.name}`}
+                {plan.name === "Enterprise" ? "Contact Sales" : "Get Started"}
+                <ArrowUpRight size={16} />
               </button>
-            </div>
+
+            </motion.div>
           ))}
+
         </div>
+
+        {/* TRUST LINE */}
+        <div className="mt-20 text-center text-gray-400 text-sm">
+          All plans include deployment, monitoring, and secure cloud hosting.
+        </div>
+
       </div>
     </section>
   );

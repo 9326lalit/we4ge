@@ -1,4 +1,4 @@
-import React from "react";
+import { motion } from "framer-motion";
 
 import Navbar from "./pages/Layout/Navbar";
 import Footer from "./pages/Layout/Footer";
@@ -11,47 +11,76 @@ import Plan from "./pages/Plan";
 import Faq from "./pages/Faq";
 import Contact from "./pages/Contact";
 
+/* Page container animation */
+const pageVariant = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+      when: "beforeChildren",
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+/* Section subtle reveal */
+const sectionVariant = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+      ease: [0.22, 1, 0.36, 1], // premium easing curve
+    },
+  },
+};
+
 const App = () => {
   return (
-    <div className="min-h-screen bg-white text-gray-900">
+    <div className=" text-gray-900 scroll-smooth">
 
-      {/* Navigation */}
       <Navbar />
 
-      {/* Main Content */}
-      <main className="">
+      <motion.main
+        // className="pt-20"
+        initial="hidden"
+        animate="visible"
+        variants={pageVariant}
+      >
 
-        <section id="home">
+        <motion.section id="home"  variants={sectionVariant}>
           <Home />
-        </section>
+        </motion.section>
 
-        <section id="services">
+        <motion.section id="services" variants={sectionVariant}>
           <Services />
-        </section>
+        </motion.section>
 
-        <section id="case-study">
+        <motion.section id="casestudy" variants={sectionVariant}>
           <CaseStudy />
-        </section>
+        </motion.section>
 
-        <section id="about">
+        <motion.section id="about" variants={sectionVariant}>
           <About />
-        </section>
+        </motion.section>
 
-        <section id="pricing">
+        <motion.section id="pricing" variants={sectionVariant}>
           <Plan />
-        </section>
+        </motion.section>
 
-        <section id="faq">
+        <motion.section id="faq" variants={sectionVariant}>
           <Faq />
-        </section>
+        </motion.section>
 
-        <section id="contact">
+        <motion.section id="contact" variants={sectionVariant}>
           <Contact />
-        </section>
+        </motion.section>
 
-      </main>
+      </motion.main>
 
-      {/* Footer */}
       <Footer />
 
     </div>

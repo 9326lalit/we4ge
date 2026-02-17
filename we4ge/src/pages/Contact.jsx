@@ -1,124 +1,145 @@
-import React from "react";
+import { motion } from "framer-motion";
+import { Mail, Phone, MapPin, ArrowUpRight } from "lucide-react";
 
 const Contact = () => {
   return (
-    <section className="w-full bg-white py-10">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+    <section className="relative py-32 bg-[#0B0F19] overflow-hidden">
 
-        {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
+      {/* Background Glow */}
+      <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-blue-600/20 blur-[180px] -z-10" />
+
+      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+
+        {/* SECTION HEADER */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center max-w-3xl mx-auto mb-24"
+        >
           <p className="text-sm uppercase tracking-widest text-gray-500 mb-4">
-            Contact
+            Contact Us
           </p>
-          <h2 className="text-4xl sm:text-5xl font-semibold text-gray-900 mb-6">
-            Let’s Build Something Great
+
+          <h2 className="text-5xl md:text-6xl font-semibold text-white leading-tight mb-6">
+            Let’s Build Something
+            <br />
+            <span className="bg-gradient-to-r from-blue-400 to-purple-400 text-transparent bg-clip-text">
+              Extraordinary.
+            </span>
           </h2>
-          <p className="text-lg text-gray-600 leading-relaxed">
-            Tell us about your project, goals, and challenges. 
-            We’ll get back to you with a clear strategy and next steps.
+
+          <p className="text-gray-400 text-lg leading-relaxed">
+            Tell us about your project, your goals, and your vision.
+            We’ll help you turn it into a scalable digital product.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Contact Layout */}
-        <div className="grid lg:grid-cols-2 gap-16">
+        {/* MAIN CONTENT */}
+        <div className="grid md:grid-cols-2 gap-16 items-start">
 
-          {/* Contact Info */}
-          <div className="space-y-10">
-
+          {/* LEFT SIDE – CONTACT INFO */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="space-y-10"
+          >
             <div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                Business Inquiries
+              <h3 className="text-2xl font-semibold text-white mb-4">
+                Let’s Start a Conversation
               </h3>
-              <p className="text-gray-600 leading-relaxed">
-                For partnerships, collaborations, or general questions,
-                reach out directly.
-              </p>
-              <p className="mt-4 text-gray-900 font-medium">
-                lalit.khairnar.dev@gmail.com<br/>
-                +91 9325443405
+
+              <p className="text-gray-400 leading-relaxed">
+                Whether you're launching a startup, scaling operations,
+                or building AI-driven systems — our team is ready
+                to collaborate and deliver impact.
               </p>
             </div>
 
-            <div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                Office
-              </h3>
-              <p className="text-gray-600">
-                Pune <br />
-              </p>
+            <div className="space-y-6 text-gray-300">
+
+              <div className="flex items-center gap-4">
+                <Mail className="text-blue-400" size={20} />
+                <span>lalit.khairnar.dev@gmail.com</span>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <Phone className="text-blue-400" size={20} />
+                <span>+91 9325443405</span>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <MapPin className="text-blue-400" size={20} />
+                <span>Global • Remote First</span>
+              </div>
+
             </div>
+          </motion.div>
 
-            <div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                Working Hours
-              </h3>
-              <p className="text-gray-600">
-                Monday – Saturday <br />
-                9:00 AM – 6:00 PM
-              </p>
-            </div>
-
-          </div>
-
-          {/* Contact Form */}
-          <div className="bg-gray-50 border border-gray-200 rounded-lg p-3">
+          {/* RIGHT SIDE – CONTACT FORM */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-10"
+          >
             <form className="space-y-6">
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm text-gray-400 mb-2">
                   Full Name
                 </label>
                 <input
                   type="text"
-                  placeholder="Enter your name"
-                  className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-1 focus:ring-gray-900"
+                  placeholder="John Doe"
+                  className="w-full bg-transparent border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-400 transition"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm text-gray-400 mb-2">
                   Email Address
                 </label>
                 <input
                   type="email"
-                  placeholder="Enter your email"
-                  className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-1 focus:ring-gray-900"
+                  placeholder="john@example.com"
+                  className="w-full bg-transparent border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-400 transition"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Company (Optional)
-                </label>
-                <input
-                  type="text"
-                  placeholder="Your company name"
-                  className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-1 focus:ring-gray-900"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm text-gray-400 mb-2">
                   Project Details
                 </label>
                 <textarea
-                  rows="5"
+                  rows="4"
                   placeholder="Tell us about your project..."
-                  className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:ring-1 focus:ring-gray-900 resize-none"
-                ></textarea>
+                  className="w-full bg-transparent border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-400 transition resize-none"
+                />
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-gray-900 text-white py-3 rounded-md font-medium hover:bg-black transition"
+                className="w-full inline-flex items-center justify-center gap-2 bg-white text-black font-medium px-6 py-3 rounded-full hover:scale-105 transition"
               >
                 Send Message
+                <ArrowUpRight size={16} />
               </button>
 
             </form>
-          </div>
+          </motion.div>
 
         </div>
+
+        {/* BOTTOM TRUST TEXT */}
+        <div className="mt-24 text-center text-gray-500 text-sm">
+          We typically respond within 24 hours.
+        </div>
+
       </div>
     </section>
   );

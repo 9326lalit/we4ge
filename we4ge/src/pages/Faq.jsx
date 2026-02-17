@@ -1,31 +1,32 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
 
-const faqData = [
+const faqs = [
   {
-    question: "What types of businesses can use Sadeva’s AI solutions?",
+    question: "What industries do you work with?",
     answer:
-      "Our AI solutions are designed for startups, growing companies, and enterprises looking to automate workflows, improve efficiency, and scale operations.",
+      "We collaborate with startups, SaaS companies, AI-driven businesses, and enterprises looking to scale digital infrastructure. Our solutions are adaptable across fintech, healthcare, logistics, and tech-enabled services.",
   },
   {
-    question: "Do I need technical knowledge to use your solutions?",
+    question: "How long does a typical project take?",
     answer:
-      "No technical knowledge is required. We handle setup, deployment, and optimization while ensuring your team can easily use the systems.",
+      "Project timelines depend on complexity. A standard product build ranges between 4–12 weeks, while enterprise-scale AI systems may take longer. We always define clear milestones before development begins.",
   },
   {
-    question: "How long does it take to implement AI automation?",
+    question: "Do you offer ongoing support after launch?",
     answer:
-      "Implementation typically takes 2–6 weeks depending on complexity, integrations, and customization requirements.",
+      "Yes. Every project includes post-launch monitoring and support. We also offer long-term technical partnerships for scaling, maintenance, and performance optimization.",
   },
   {
-    question: "Can you build custom AI agents for my business?",
+    question: "Can you integrate AI into existing systems?",
     answer:
-      "Yes. We specialize in building tailored AI agents that fit your workflows, industry, and growth objectives.",
+      "Absolutely. We specialize in AI workflow automation, predictive analytics, and scalable AI architecture that integrates seamlessly with your existing infrastructure.",
   },
   {
-    question: "What if I need ongoing support?",
+    question: "How do we get started?",
     answer:
-      "We provide continuous optimization, monitoring, and support to ensure your AI systems evolve with your business.",
+      "Simply reach out through our contact form. We'll schedule a discovery call to understand your goals and propose a tailored roadmap aligned with your business vision.",
   },
 ];
 
@@ -37,60 +38,77 @@ const Faq = () => {
   };
 
   return (
-    <section className="w-full bg-[#f5f5f5] py-10">
-      <div className="max-w-7xl mx-auto px-3 lg:px-12">
+    <section className="relative  bg-[#0B0F19] overflow-hidden">
 
-        <div className="grid lg:grid-cols-2 gap-16">
+      {/* Background Glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-purple-600/20 blur-[160px] -z-10" />
 
-          {/* LEFT SIDE */}
-          <div>
-            <p className="text-sm uppercase tracking-widest text-gray-400 mb-4">
-              FAQ
-            </p>
-            <h2 className="text-4xl sm:text-5xl font-semibold text-gray-900 leading-tight">
-              Frequently <br /> Asked <br /> Questions
-            </h2>
-          </div>
+      <div className="max-w-7xl mx-auto px-6 lg:px-10">
 
-          {/* RIGHT SIDE */}
-          <div className="space-y-4">
+        {/* HEADER */}
+        <div className="text-center mb-20">
+          <p className="text-sm uppercase tracking-widest text-gray-500 mb-4">
+            Frequently Asked Questions
+          </p>
 
-            {faqData.map((item, index) => (
-              <div
-                key={index}
-                className="bg-white border border-gray-200 rounded-xl overflow-hidden transition-all duration-300"
+          <h2 className="text-5xl md:text-6xl font-semibold text-white leading-tight mb-6">
+            Everything You
+            <br />
+            <span className="bg-gradient-to-r from-purple-400 to-blue-400 text-transparent bg-clip-text">
+              Need to Know.
+            </span>
+          </h2>
+
+          <p className="text-gray-400 text-lg leading-relaxed">
+            Clear answers to common questions about our services,
+            workflow, and technical capabilities.
+          </p>
+        </div>
+
+        {/* FAQ LIST */}
+        <div className="space-y-6">
+
+          {faqs.map((faq, index) => (
+            <div
+              key={index}
+              className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden"
+            >
+              <button
+                onClick={() => toggle(index)}
+                className="w-full flex items-center justify-between p-6 text-left"
               >
-                <button
-                  onClick={() => toggle(index)}
-                  className="w-full flex justify-between items-center px-3 py-5 text-left"
-                >
-                  <span className="font-medium text-gray-900">
-                    {item.question}
-                  </span>
+                <span className="text-lg font-medium text-white">
+                  {faq.question}
+                </span>
 
-                  <span className="ml-4">
-                    {activeIndex === index ? (
-                      <Minus size={18} />
-                    ) : (
-                      <Plus size={18} />
-                    )}
-                  </span>
-                </button>
+                {activeIndex === index ? (
+                  <Minus className="text-purple-400" size={20} />
+                ) : (
+                  <Plus className="text-purple-400" size={20} />
+                )}
+              </button>
 
-                {/* Animated Content */}
-                <div
-                  className={`px-3 transition-all duration-300 ease-in-out ${
-                    activeIndex === index
-                      ? "max-h-40 pb-6 opacity-100"
-                      : "max-h-0 opacity-0"
-                  } overflow-hidden`}
-                >
-                  <p className="text-gray-600">{item.answer}</p>
-                </div>
-              </div>
-            ))}
+              <AnimatePresence>
+                {activeIndex === index && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.4 }}
+                    className="px-6 pb-6 text-gray-400 leading-relaxed"
+                  >
+                    {faq.answer}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          ))}
 
-          </div>
+        </div>
+
+        {/* Bottom Support Text */}
+        <div className="mt-20 text-center text-gray-500 text-sm">
+          Still have questions? Reach out to our team anytime.
         </div>
 
       </div>
